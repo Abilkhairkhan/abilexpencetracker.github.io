@@ -1,1 +1,61 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Қаржы Есебі</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <h1>💰 Қаржы Есебі</h1>
+
+  <div class="container">
+    <div class="form">
+      <input type="date" id="date">
+      <input type="text" id="category" placeholder="Категория">
+      <input type="number" id="amount" placeholder="Сома">
+      <button id="add">Қосу</button>
+      <button id="export">Excel-ге экспорт</button>
+    </div>
+
+    <div class="filter">
+      <input type="text" id="filterCategory" placeholder="Категория бойынша сүзу">
+      <button id="filterBtn">Сүзу</button>
+      <button id="showAll">Барлығын көрсету</button>
+    </div>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Күн</th>
+          <th>Категория</th>
+          <th>Сома</th>
+          <th>Әрекет</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3 id="total">Жалпы баланс: 0 ₸</h3>
+  </div>
+
+  <!-- Chatbot icon -->
+  <div id="chatbot-icon">🤖</div>
+
+  <!-- Chat window -->
+  <div id="chat-window" class="hidden">
+    <div id="chat-header">
+      <span>ИИ ассистент</span>
+      <button id="close-chat">✖</button>
+    </div>
+    <div id="chat-body"></div>
+    <div id="chat-input">
+      <input type="text" id="userMessage" placeholder="Сұрағыңызды жазыңыз...">
+      <button id="sendMessage">Жіберу</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="ai.js"></script>
+</body>
+</html>

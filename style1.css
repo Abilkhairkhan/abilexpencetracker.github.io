@@ -1,0 +1,238 @@
+/* 🌿 Жалпы стиль */
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #e9f5f1, #f9fafb);
+  margin: 0;
+  padding: 40px 20px;
+  color: #222;
+  transition: background 0.5s ease;
+}
+
+/* Негізгі контейнер */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* Формалар мен батырмалар */
+input, button {
+  margin: 6px 4px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.2);
+}
+
+button {
+  cursor: pointer;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(16,185,129,0.3);
+}
+
+button:hover {
+  background-color: #0d9d6b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(16,185,129,0.4);
+}
+
+/* Кесте стилі */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+th {
+  background: #10b981;
+  color: white;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #ecfdf5;
+  transition: background 0.2s ease;
+}
+
+/* 💬 Chatbot стилі */
+#chatbot-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(16,185,129,0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#chatbot-icon:hover {
+  background: #0d9d6b;
+  transform: scale(1.05);
+}
+
+/* Чат терезесі */
+#chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 340px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeInUp 0.3s ease forwards;
+  z-index: 999;
+}
+
+#chat-window.hidden {
+  display: none;
+}
+
+/* Жоғарғы панель */
+#chat-header {
+  background: linear-gradient(135deg, #10b981, #0d9d6b);
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#chat-header button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#chat-header button:hover {
+  transform: rotate(90deg);
+}
+
+/* Хабарламалар аймағы */
+#chat-body {
+  height: 280px;
+  overflow-y: auto;
+  padding: 12px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* Хабарламалар */
+#chat-body .message {
+  margin: 6px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.user {
+  background: #dcfce7;
+  align-self: flex-end;
+  border-top-right-radius: 2px;
+}
+
+.bot {
+  background: #e5e7eb;
+  align-self: flex-start;
+  border-top-left-radius: 2px;
+}
+
+/* Төменгі енгізу аймағы */
+#chat-input {
+  display: flex;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+#chat-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+}
+
+#chat-input button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#chat-input button:hover {
+  background: #0d9d6b;
+}
+
+/* Анимациялар */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

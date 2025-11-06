@@ -40,13 +40,10 @@ document.getElementById("filterBtn").onclick = () => {
 document.getElementById("showAll").onclick = () => renderTable();
 
 document.getElementById("export").onclick = () => {
-  let csv = "Күн,Категория,Сома\n";
-  records.forEach(r => csv += `${r.date},${r.category},${r.amount}\n`);
-  const blob = new Blob([csv], { type: "text/xlsx" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "qarzhy_esep.xlsx";
-  link.click();
+  const ws = XLSX.utils.json_to_sheet(records);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Қаржы есебі");
+  XLSX.writeFile(wb, "qarzhy_esep.xlsx");
 };
 
 renderTable();

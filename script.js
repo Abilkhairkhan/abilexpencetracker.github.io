@@ -42,10 +42,10 @@ document.getElementById("showAll").onclick = () => renderTable();
 document.getElementById("export").onclick = () => {
   let csv = "Күн,Категория,Сома\n";
   records.forEach(r => csv += `${r.date},${r.category},${r.amount}\n`);
-  const blob = new Blob([csv], { type: "text/csv" });
+  const blob = new Blob([csv], { type: "text/xlsx" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "qarzhy_esep.csv";
+  link.download = "qarzhy_esep.xlsx";
   link.click();
 };
 
